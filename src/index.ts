@@ -13,6 +13,10 @@ class Hammer {
     if (this.y < this.z) {
       return false;
     }
+    if (this.y > this.z) {
+      return false;
+    }
+
     return true;
   };
 
