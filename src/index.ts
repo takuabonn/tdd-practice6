@@ -9,11 +9,17 @@ class Hammer {
     this.z = z;
   }
 
-  private canGoal = () => {
-    if (this.y < this.z) {
-      return false;
+  private absolutelyCannotGoal = () => {
+    if (this.y > 0) {
+      return this.y < this.x && this.y < this.z;
     }
-    if (this.y > this.z) {
+    if (this.y < 0) {
+      return this.y > this.x && this.y > this.x;
+    }
+  };
+
+  private canGoal = () => {
+    if (this.absolutelyCannotGoal()) {
       return false;
     }
 
