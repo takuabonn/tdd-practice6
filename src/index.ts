@@ -30,6 +30,12 @@ class Hammer {
     if (!this.canGoal()) {
       return -1;
     }
+    if (this.y < 0 && this.y < this.x) {
+      return this.x < 0 ? this.x * -1 : this.x;
+    }
+    if (this.y > 0 && this.y > this.x) {
+      return this.x < 0 ? this.x * -1 : this.x;
+    }
   };
 }
 
